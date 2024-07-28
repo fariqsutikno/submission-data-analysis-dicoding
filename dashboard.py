@@ -6,7 +6,7 @@ import seaborn as sns
 # Judul aplikasi
 st.title('Pemetaan Perilaku Pelanggan Rental Sepeda "Manunggal"')
 
-hours_data = pd.read_csv("dashboard/main_data.csv")
+hours_data = pd.read_csv("main_data.csv")
 
 hours_data['dteday'] = pd.to_datetime(hours_data['dteday'])
 
@@ -75,7 +75,7 @@ st.markdown('''### Behaviour Penyewa: Cuaca dan Hari Libur Memiliki Pengaruh dal
 - Pada setiap perbedaan cuaca, ketika memburuk, akan terjadi penurunan angka permintaan juga. Sebaliknya jika membaik (cerah), maka permintaan akan meningkat juga. Ini menunjukkan bahwa cuaca adalah faktor yang mempengaruhi angka permintaan. Bahkan, di saat liburan dan hujan deras, hampir tidak ada angka permintaan.''')
 
 with st.sidebar:
-    st.image("dashboard/logo.png")
+    st.image("logo.png")
     st.header("Rental Sepeda Manunggal")
     st.caption("Jalan Jendral Sudirman, No. 31, Kecamatan Ngadipuro, Kabupaten Blitar, Jawa Timur")
-    st.link_button("Hubungi via Whatsapp", "https://wa.me/628779897434")
+    st.link_button("Hubungi via Whatsapp", "https://wa.me/62812345678")
