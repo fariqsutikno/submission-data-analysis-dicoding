@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from streamlit_dynamic_filters import DynamicFilters
 
 # Judul aplikasi
 st.title('Pemetaan Perilaku Pelanggan Rental Sepeda "Manunggal"')
@@ -73,6 +74,10 @@ st.markdown('''### Behaviour Penyewa: Cuaca dan Hari Libur Memiliki Pengaruh dal
 - Bahkan saat hujan deras, permintaan tetap ada pada hari kerja. Dengan ini, membuktikan bahwa penyewaan sepeda sangat dibutuhkan untuk mobilitas ke tempat kerja.
     
 - Pada setiap perbedaan cuaca, ketika memburuk, akan terjadi penurunan angka permintaan juga. Sebaliknya jika membaik (cerah), maka permintaan akan meningkat juga. Ini menunjukkan bahwa cuaca adalah faktor yang mempengaruhi angka permintaan. Bahkan, di saat liburan dan hujan deras, hampir tidak ada angka permintaan.''')
+
+dynamic_filters = DynamicFilters(hours_data, filters=['holiday'])
+
+dynamic_filters.display_filters(location='sidebar')
 
 with st.sidebar:
     st.image("logo.png")
